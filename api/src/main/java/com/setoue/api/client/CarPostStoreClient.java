@@ -18,7 +18,7 @@ public class CarPostStoreClient {
     private final String POSTS_STORE_SERVICE_URI = "http://localhost:8080/sale";
 
     @Autowired
-    RestTemplate restTemplate;
+    private RestTemplate restTemplate;
 
     public List<CarPostDto> carForSaleClient(){
         ResponseEntity<CarPostDto[]> responseEntity = restTemplate.getForEntity(POSTS_STORE_SERVICE_URI+"/cars", CarPostDto[].class);
