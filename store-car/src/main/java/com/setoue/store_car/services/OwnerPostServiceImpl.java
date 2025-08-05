@@ -5,7 +5,9 @@ import com.setoue.store_car.entities.OwnerPostEntity;
 import com.setoue.store_car.mapper.OwnerPostMapper;
 import com.setoue.store_car.repositories.OwnerPostRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class OwnerPostServiceImpl implements OwnerPostService{
 
     @Autowired

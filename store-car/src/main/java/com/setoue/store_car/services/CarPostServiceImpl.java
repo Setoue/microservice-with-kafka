@@ -3,9 +3,7 @@ package com.setoue.store_car.services;
 import com.setoue.store_car.dto.CarPostDto;
 import com.setoue.store_car.entities.CarPostEntity;
 import com.setoue.store_car.mapper.CarPostMapper;
-import com.setoue.store_car.message.KafkaConsumerMessage;
 import com.setoue.store_car.repositories.CarPostRepository;
-import com.setoue.store_car.repositories.OwnerPostRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,12 +16,6 @@ public class CarPostServiceImpl implements CarPostService {
 
     @Autowired
     private CarPostRepository carPostRepository;
-
-    @Autowired
-    private OwnerPostRepository ownerPostRepository;
-
-    @Autowired
-    private KafkaConsumerMessage kafkaConsumerMessage;
 
     @Override
     public void newPostDetails(CarPostDto carPostDto) {
