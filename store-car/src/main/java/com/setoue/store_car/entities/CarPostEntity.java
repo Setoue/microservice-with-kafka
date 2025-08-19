@@ -35,13 +35,13 @@ public class CarPostEntity {
     @Column(name="car_created_date")
     private String createdDate;
 
-    @Column(name="car_owner_id")
+    @Column(name="owner_id")
     private Long ownerId;
 
-    @Column(name="car_owner_name")
+    @Column(name="owner_name")
     private String ownerName;
 
-    @Column(name="car_owner_type")
+    @Column(name="owner_type")
     private String ownerType;
 
     @Column(name="car_post_contact")

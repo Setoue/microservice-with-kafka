@@ -17,9 +17,11 @@ public class CarPostServiceImpl implements CarPostService {
     @Autowired
     private CarPostRepository carPostRepository;
 
+    @Autowired CarPostMapper carPostMapper;
+
     @Override
     public void newPostDetails(CarPostDto carPostDto) {
-        CarPostEntity carPostEntity = CarPostMapper.toEntity(carPostDto);
+        CarPostEntity carPostEntity = carPostMapper.toEntity(carPostDto);
         carPostRepository.save(carPostEntity);
     }
 
@@ -27,7 +29,7 @@ public class CarPostServiceImpl implements CarPostService {
     public List<CarPostDto> getCarSales() {
         List<CarPostDto> listCarsSales = new ArrayList<>();
         carPostRepository.findAll().forEach(item -> {
-            listCarsSales.add(CarPostMapper.toDto(item));
+            listCarsSales.add(carPostMapper.toDto(item));
         });
         return listCarsSales;
     }

@@ -13,9 +13,12 @@ public class OwnerPostServiceImpl implements OwnerPostService{
     @Autowired
     private OwnerPostRepository ownerPostRepository;
 
+    @Autowired
+    private OwnerPostMapper ownerPostMapper;
+
     @Override
     public void createOwnerPost(OwnerPostDto ownerPostDto) {
-        OwnerPostEntity ownerPostEntity = OwnerPostMapper.toEntity(ownerPostDto);
+        OwnerPostEntity ownerPostEntity = ownerPostMapper.toEntity(ownerPostDto);
         ownerPostRepository.save(ownerPostEntity);
     }
 }
